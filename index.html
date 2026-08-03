@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan Gatignol</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <main class="content">
+
+        <header>
+
+            <div class="top-line">
+
+                <div class="identity">
+                    NATHAN GATIGNOL
+                    <span class="normal">(Paris, 1998)</span>
+                </div>
+
+                <a href="mailto:nathan.gatignol@protonmail.com" class="nav-link">
+                    EMAIL ME
+                </a>
+
+            </div>
+
+            <div class="bottom-line">
+
+                <a href="#" class="nav-link active" data-section="portfolio">
+                    Portfolio
+                </a>
+
+                <div class="right-links">
+
+                    <a href="#" class="nav-link" data-section="sightseeing">
+                        Sightseeing
+                    </a>
+
+                    /
+
+                    <a href="#" class="nav-link" data-section="listening">
+                        Listening
+                    </a>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section id="portfolio-content" class="section-content active">
+
+            <img src="PORTFOLIO/2.jpg">
+            <img src="PORTFOLIO/3.jpg">
+            <img src="PORTFOLIO/4.jpg">
+            <img src="PORTFOLIO/5.jpg">
+            <img src="PORTFOLIO/6.jpg">
+            <img src="PORTFOLIO/7.jpg">
+            <img src="PORTFOLIO/8.jpg">
+            <img src="PORTFOLIO/9.jpg">
+            <img src="PORTFOLIO/10.jpg">
+            <img src="PORTFOLIO/11.jpg">
+            <img src="PORTFOLIO/12.jpg">
+            <img src="PORTFOLIO/13.jpg">
+            <img src="PORTFOLIO/14.jpg">
+            <img src="PORTFOLIO/15.jpg">
+            <img src="PORTFOLIO/16.jpg">
+            <img src="PORTFOLIO/17.jpg">
+            <img src="PORTFOLIO/18.jpg">
+            <img src="PORTFOLIO/19.jpg">
+            <img src="PORTFOLIO/20.jpg">
+            <img src="PORTFOLIO/21.jpg">
+            <img src="PORTFOLIO/22.jpg">
+            <img src="PORTFOLIO/23.jpg">
+            <img src="PORTFOLIO/24.jpg">
+            <img src="PORTFOLIO/25.jpg">
+            <img src="PORTFOLIO/26.jpg">
+            <img src="PORTFOLIO/27.jpg">
+            <img src="PORTFOLIO/28.jpg">
+            <img src="PORTFOLIO/29.jpg">
+            <img src="PORTFOLIO/30.jpg">
+       
+
+
+
+
+        </section>
+
+
+        <section id="sightseeing-content" class="section-content">
+
+            <p>useless and marvellous, mostly not mine.</p>
+            <img src="IMG/01.jpg">
+            <img src="IMG/2.jpg">
+            <img src="IMG/3.jpg">
+            <img src="IMG/4.jpg">
+            <img src="IMG/5.jpg">
+            <img src="IMG/6.jpg">
+            <img src="IMG/7.jpg">
+            <img src="IMG/8.jpg">
+            <img src="IMG/9.jpg">
+            <img src="IMG/10.jpg">
+            <img src="IMG/11.jpg">
+            <img src="IMG/12.jpg">
+            <img src="IMG/13.jpg">
+            <img src="IMG/14.jpg">
+            <img src="IMG/15.jpg">
+            <img src="IMG/15b.jpg">
+            <img src="IMG/16.jpg">
+            <img src="IMG/17.jpg">
+            <img src="IMG/18.jpg">
+            <img src="IMG/19.jpg">
+            <img src="IMG/19b.jpg">
+            <img src="IMG/20.jpg">
+            <img src="IMG/21.jpg">
+            <img src="IMG/22.jpg">
+            <img src="IMG/23.jpg">
+            <img src="IMG/24.jpg">
+            <img src="IMG/25.jpg">
+            <img src="IMG/26.jpg">
+            <img src="IMG/27.jpg">
+            <img src="IMG/28.jpg">
+            <img src="IMG/29.jpg">
+            <img src="IMG/30.jpg">
+            <img src="IMG/31.jpg">
+            <img src="IMG/32.jpg">
+         
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+
+const links=document.querySelectorAll("[data-section]");
+const sections=document.querySelectorAll(".section-content");
+
+links.forEach(link=>{
+
+    link.addEventListener("click",e=>{
+
+        e.preventDefault();
+
+        if(link.dataset.section==="listening"){
+            window.open("https://www.youtube.com/playlist?list=PLy9gHk_NVVrAcjed-cxqgJEWR7yUiEwkp","_blank");
+            return;
+        }
+
+        links.forEach(l=>l.classList.remove("active"));
+        sections.forEach(s=>s.classList.remove("active"));
+
+        link.classList.add("active");
+
+        document
+            .getElementById(link.dataset.section+"-content")
+            .classList.add("active");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
