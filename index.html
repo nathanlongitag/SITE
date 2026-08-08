@@ -3,29 +3,51 @@
 <html lang="fr">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Nathan Gatignol</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
 <div class="wrapper">
+
 
     <main class="content">
 
+
+        <!-- =====================================
+             HEADER
+             ===================================== -->
+
         <header>
+
 
             <!-- PREMIÈRE LIGNE -->
 
             <div class="top-line">
 
                 <div class="identity">
+
                     NATHAN GATIGNOL
-                    <span class="normal">(Paris, 1998)</span>
+
+                    <span class="normal">
+                        (Paris, 1998)
+                    </span>
+
                 </div>
+
 
                 <a
                     href="mailto:nathan.gatignol@protonmail.com"
@@ -41,25 +63,34 @@
 
             <div class="bottom-line">
 
+
+                <!-- IS -->
+
                 <a
                     href="#"
                     class="nav-link"
                     data-section="is"
                 >
-                    IS
+                    <i>IS</i>
                 </a>
+
+
+                <!-- SIGHTSEEING / LISTENING -->
 
                 <div class="right-links">
 
+
                     <a
                         href="#"
-                        class="nav-link active"
+                        class="nav-link"
                         data-section="sightseeing"
                     >
                         Sightseeing
                     </a>
 
+
                     <span>/</span>
+
 
                     <a
                         href="#"
@@ -69,16 +100,20 @@
                         Listening
                     </a>
 
+
                 </div>
 
+
             </div>
+
 
         </header>
 
 
-        <!-- ========================= -->
-        <!-- IS -->
-        <!-- ========================= -->
+
+        <!-- =====================================
+             IS
+             ===================================== -->
 
         <section
             id="is-content"
@@ -88,6 +123,7 @@
             <p class="normal-text">
                 Under construction
             </p>
+
 
             <!--
             PORTFOLIO À VENIR
@@ -126,17 +162,19 @@
         </section>
 
 
-        <!-- ========================= -->
-        <!-- SIGHTSEEING -->
-        <!-- ========================= -->
+
+        <!-- =====================================
+             SIGHTSEEING
+             ===================================== -->
 
         <section
             id="sightseeing-content"
-            class="section-content active"
+            class="section-content"
         >
 
+
             <p class="normal-text">
-          <i> USELESS AND MARVELLOUS, MOSTLY NOT MINE  </i>
+                useless and marvellous, mostly not mine.
             </p>
 
 
@@ -148,113 +186,159 @@
             <img src="IMG/6.jpg">
             <img src="IMG/7.jpg">
             <img src="IMG/8.jpg">
-
-
-            <p class="normal-text">
-                My Own Private Idaho, 1991
-            </p>
-
+<span class="normal">My Own Private Idaho, 1991</span>
+            <img src="IMG/9.jpg">
+            <img src="IMG/10.jpg">
+            <img src="IMG/11.jpg">
 
             <img src="IMG/13.jpg">
             <img src="IMG/14.jpg">
             <img src="IMG/14b.jpg">
             <img src="IMG/15.jpg">
             <img src="IMG/15b.jpg">
+<span class="normal">Welt am Draht, 1973</span>
+            <img src="IMG/16.jpg">
+            <img src="IMG/17.jpg">
+            <img src="IMG/18.jpg">
+            <img src="IMG/19.jpg">
+            <img src="IMG/19b.jpg">
+            <img src="IMG/20.jpg">
+            <img src="IMG/21.jpg">
+            <img src="IMG/22.jpg">
+            <img src="IMG/23.jpg">
+<span class="normal">Solaris, 1972</span>
+            <img src="IMG/24.jpg">
+            <img src="IMG/25.jpg">
+            <img src="IMG/26.jpg">
+            <img src="IMG/27.jpg">
+            <img src="IMG/28.jpg">
+<span class="normal">Going South, 2018</span>
+            <img src="IMG/29.jpg">
+            <img src="IMG/30.jpg">
+            <img src="IMG/31.jpg">
+            <img src="IMG/32.jpg">
+            <img src="IMG/33.jpg">
+<span class="normal">Turris Babel, Athanasius Kircher, 1679.</span>
+            <img src="IMG/34.jpg">
 
 
-            <p class="normal-text">
-                Welt am Draht, 1973
-            </p>
-
-
-            <p class="normal-text">
-                Solaris, 1972
-            </p>
-
-
-            <p class="normal-text">
-                Going South, 2018
-            </p>
-
-
-            <p class="normal-text">
-                Turris Babel, Athanasius Kircher, 1679.
-            </p>
 
         </section>
 
+
     </main>
+
 
 </div>
 
 
+
+<!-- =====================================
+     JAVASCRIPT
+     ===================================== -->
+
 <script>
 
-const links = document.querySelectorAll("[data-section]");
-const sections = document.querySelectorAll(".section-content");
+
+const links = document.querySelectorAll(
+    "[data-section]"
+);
 
 
-links.forEach(link => {
+const sections = document.querySelectorAll(
+    ".section-content"
+);
 
-    link.addEventListener("click", function(event) {
 
-        event.preventDefault();
+links.forEach(function(link) {
 
-        /*
-         * LISTENING
-         * Ouvre directement la playlist YouTube.
-         */
 
-        if (this.dataset.section === "listening") {
+    link.addEventListener(
+        "click",
+        function(event) {
 
-            window.open(
-                "https://www.youtube.com/playlist?list=PLy9gHk_NVVrAcjed-cxqgJEWR7yUiEwkp",
-                "_blank"
-            );
 
-            return;
+            event.preventDefault();
+
+
+            /*
+             * LISTENING
+             * Ouvre directement la playlist YouTube.
+             */
+
+            if (
+                this.dataset.section === "listening"
+            ) {
+
+                window.open(
+                    "https://www.youtube.com/playlist?list=PLy9gHk_NVVrAcjed-cxqgJEWR7yUiEwkp",
+                    "_blank"
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * Retire la sélection actuelle.
+             */
+
+            links.forEach(function(item) {
+
+                item.classList.remove("active");
+
+            });
+
+
+            /*
+             * Cache toutes les sections.
+             */
+
+            sections.forEach(function(section) {
+
+                section.classList.remove("active");
+
+            });
+
+
+            /*
+             * Active le lien cliqué.
+             */
+
+            this.classList.add("active");
+
+
+            /*
+             * Affiche la section correspondante.
+             */
+
+            const sectionId =
+                this.dataset.section + "-content";
+
+
+            const section =
+                document.getElementById(sectionId);
+
+
+            if (section) {
+
+                section.classList.add("active");
+
+            }
+
+
         }
+    );
 
-
-        /*
-         * Retire la sélection actuelle.
-         */
-
-        links.forEach(item => {
-            item.classList.remove("active");
-        });
-
-
-        sections.forEach(section => {
-            section.classList.remove("active");
-        });
-
-
-        /*
-         * Active le lien cliqué.
-         */
-
-        this.classList.add("active");
-
-
-        /*
-         * Affiche la section correspondante.
-         */
-
-        const section = document.getElementById(
-            this.dataset.section + "-content"
-        );
-
-        if (section) {
-            section.classList.add("active");
-        }
-
-    });
 
 });
 
+
 </script>
 
+
 </body>
+
 </html>
-```
+
