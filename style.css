@@ -1,4 +1,4 @@
-```css
+
 /* =========================================
    RESET
    ========================================= */
@@ -13,6 +13,13 @@
 /* =========================================
    BODY
    ========================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 body {
 
@@ -34,6 +41,7 @@ body {
 .wrapper {
 
     width: 100%;
+    max-width: 100%;
     min-height: 100vh;
 
 }
@@ -46,6 +54,7 @@ body {
 .content {
 
     width: 33.333333%;
+
     padding: 12px;
 
 }
@@ -56,6 +65,8 @@ body {
    ========================================= */
 
 header {
+
+    width: 100%;
 
     margin-bottom: 2px;
 
@@ -68,13 +79,21 @@ header {
 
 .top-line {
 
+    width: 100%;
+
     display: grid;
 
-    grid-template-columns: minmax(0, 1fr) auto;
+    /*
+     * La première colonne peut rétrécir.
+     * La seconde reste juste assez large
+     * pour "(Email me)".
+     */
+
+    grid-template-columns: minmax(0, 1fr) max-content;
 
     align-items: center;
 
-    column-gap: 12px;
+    column-gap: 8px;
 
     margin-bottom: 2px;
 
@@ -82,6 +101,8 @@ header {
 
 
 .identity {
+
+    min-width: 0;
 
     white-space: nowrap;
 
@@ -92,15 +113,12 @@ header {
 }
 
 
-/* =========================================
-   TEXTE NORMAL
-   ========================================= */
-
 .normal {
 
     text-transform: none;
 
 }
+
 
 .normal-text {
 
@@ -115,18 +133,18 @@ header {
 
 .bottom-line {
 
+    width: 100%;
+
     display: flex;
 
     justify-content: space-between;
 
     align-items: center;
 
+    min-width: 0;
+
 }
 
-
-/* Partie droite :
-   SIGHTSEEING / LISTENING
-*/
 
 .right-links {
 
@@ -135,6 +153,8 @@ header {
     align-items: center;
 
     gap: 4px;
+
+    min-width: 0;
 
 }
 
@@ -170,22 +190,16 @@ header {
    CONTENU DES SECTIONS
    ========================================= */
 
-/*
-   Aucune section n'est affichée
-   par défaut.
-*/
-
 .section-content {
 
     display: none;
 
+    width: 100%;
+
+    max-width: 100%;
+
 }
 
-
-/*
-   La section active apparaît
-   directement sous le header.
-*/
 
 .section-content.active {
 
@@ -195,15 +209,8 @@ header {
 
 
 /* =========================================
-   ESPACEMENT DU PREMIER ÉLÉMENT
+   PREMIER ÉLÉMENT DU CONTENU
    ========================================= */
-
-/*
-   On annule les marges éventuelles du
-   premier paragraphe afin que le contenu
-   commence exactement à 2px sous la
-   deuxième ligne.
-*/
 
 .section-content > p:first-child {
 
@@ -233,6 +240,8 @@ img {
 
     width: 100%;
 
+    max-width: 100%;
+
     height: auto;
 
     display: block;
@@ -252,7 +261,57 @@ img {
 
         width: 100%;
 
+        max-width: 100%;
+
+        padding: 12px;
+
+    }
+
+
+    /*
+     * Sur téléphone, on laisse la première
+     * ligne utiliser toute la largeur disponible.
+     */
+
+    .top-line {
+
+        width: 100%;
+
+        grid-template-columns: minmax(0, 1fr) max-content;
+
+        column-gap: 6px;
+
+    }
+
+
+    /*
+     * Permet au nom de se raccourcir
+     * plutôt que de pousser Email hors écran.
+     */
+
+    .identity {
+
+        min-width: 0;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+    }
+
+
+    .bottom-line {
+
+        width: 100%;
+
+    }
+
+
+    .right-links {
+
+        white-space: nowrap;
+
     }
 
 }
-```
+
