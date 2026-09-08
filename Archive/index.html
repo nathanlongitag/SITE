@@ -1,67 +1,134 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Nathan Gatignol</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
 <div class="wrapper">
+
 
     <main class="content">
 
+
+        <!-- =====================================
+             HEADER
+             ===================================== -->
+
         <header>
+
+
+            <!-- PREMIÈRE LIGNE -->
 
             <div class="top-line">
 
                 <div class="identity">
+
                     NATHAN GATIGNOL
-                    <span class="normal">(Paris, 1998)</span>
+
+                    <span class="normal">
+                        (Paris, 1998)
+                    </span>
+
                 </div>
 
-                <a href="mailto:nathan.gatignol@protonmail.com" class="nav-link">
-                    EMAIL ME
+
+                <a
+                    href="mailto:nathan.gatignol@protonmail.com"
+                    class="nav-link normal"
+                >
+                    (Email me)
                 </a>
 
             </div>
+
+
+            <!-- DEUXIÈME LIGNE -->
 
             <div class="bottom-line">
 
-                <a href="#" class="nav-link" data-section="portfolio">
-                    Portfolio
+
+                <!-- IS -->
+
+                <a
+                    href="#"
+                    class="nav-link"
+                    data-section="is"
+                >
+                     <span class="normal">
+                        Is
+                    </span> 
                 </a>
+
+
+                <!-- SIGHTSEEING / LISTENING -->
 
                 <div class="right-links">
 
-                    <a href="#" class="nav-link" data-section="sightseeing">
+
+                    <a
+                        href="#"
+                        class="nav-link"
+                        data-section="sightseeing"
+                    >
                         Sightseeing
                     </a>
 
-                    /
 
-                    <a href="#" class="nav-link" data-section="listening">
+                    <span>/</span>
+
+
+                    <a
+                        href="#"
+                        class="nav-link"
+                        data-section="listening"
+                    >
                         Listening
                     </a>
 
+
                 </div>
 
+
             </div>
+
 
         </header>
 
 
-        <section id="portfolio-content" class="section-content">
 
- <p>full pdf  <a href="https://drive.proton.me/urls/XQZ3MQSXV4#fLeGRRD0rzcr" class="nav-link">
-                    here.
-                </a>
-</p>
+        <!-- =====================================
+             IS
+             ===================================== -->
 
+        <section
+            id="is-content"
+            class="section-content"
+        >
+
+            <p class="normal-text">
+                Under construction
+            </p>
+
+
+            <!--
+            PORTFOLIO À VENIR
 
             <img src="PORTFOLIO/2.jpg">
             <img src="PORTFOLIO/3.jpg">
@@ -92,19 +159,27 @@
             <img src="PORTFOLIO/28.jpg">
             <img src="PORTFOLIO/29.jpg">
             <img src="PORTFOLIO/30.jpg">
-       
-
-
-
+            -->
 
         </section>
 
 
-        <section id="sightseeing-content" class="section-content">
 
-            <p>useless and marvellous, mostly not mine.</p>
+        <!-- =====================================
+             SIGHTSEEING
+             ===================================== -->
 
- 
+        <section
+            id="sightseeing-content"
+            class="section-content"
+        >
+
+
+            <p class="normal-text">
+                Useless and marvellous, mostly not mine.
+            </p>
+
+
             <img src="IMG/01.jpg">
             <img src="IMG/2.jpg">
             <img src="IMG/3.jpg">
@@ -149,42 +224,123 @@
             <img src="IMG/34.jpg">
 
 
+
         </section>
+
 
     </main>
 
+
 </div>
+
+
+
+<!-- =====================================
+     JAVASCRIPT
+     ===================================== -->
 
 <script>
 
-const links=document.querySelectorAll("[data-section]");
-const sections=document.querySelectorAll(".section-content");
 
-links.forEach(link=>{
+const links = document.querySelectorAll(
+    "[data-section]"
+);
 
-    link.addEventListener("click",e=>{
 
-        e.preventDefault();
+const sections = document.querySelectorAll(
+    ".section-content"
+);
 
-        if(link.dataset.section==="listening"){
-            window.open("https://www.youtube.com/playlist?list=PLy9gHk_NVVrAcjed-cxqgJEWR7yUiEwkp","_blank");
-            return;
+
+links.forEach(function(link) {
+
+
+    link.addEventListener(
+        "click",
+        function(event) {
+
+
+            event.preventDefault();
+
+
+            /*
+             * LISTENING
+             * Ouvre directement la playlist YouTube.
+             */
+
+            if (
+                this.dataset.section === "listening"
+            ) {
+
+                window.open(
+                    "https://www.youtube.com/playlist?list=PLy9gHk_NVVrAcjed-cxqgJEWR7yUiEwkp",
+                    "_blank"
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * Retire la sélection actuelle.
+             */
+
+            links.forEach(function(item) {
+
+                item.classList.remove("active");
+
+            });
+
+
+            /*
+             * Cache toutes les sections.
+             */
+
+            sections.forEach(function(section) {
+
+                section.classList.remove("active");
+
+            });
+
+
+            /*
+             * Active le lien cliqué.
+             */
+
+            this.classList.add("active");
+
+
+            /*
+             * Affiche la section correspondante.
+             */
+
+            const sectionId =
+                this.dataset.section + "-content";
+
+
+            const section =
+                document.getElementById(sectionId);
+
+
+            if (section) {
+
+                section.classList.add("active");
+
+            }
+
+
         }
+    );
 
-        links.forEach(l=>l.classList.remove("active"));
-        sections.forEach(s=>s.classList.remove("active"));
-
-        link.classList.add("active");
-
-        document
-            .getElementById(link.dataset.section+"-content")
-            .classList.add("active");
-
-    });
 
 });
 
+
 </script>
 
+
 </body>
+
 </html>
+

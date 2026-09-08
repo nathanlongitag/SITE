@@ -1,5 +1,7 @@
 
-
+/* =========================================
+   RESET
+   ========================================= */
 
 * {
     margin: 0;
@@ -8,7 +10,9 @@
 }
 
 
-
+/* =========================================
+   BODY
+   ========================================= */
 
 html,
 body {
@@ -22,6 +26,7 @@ body {
     font-family: "Times New Roman", serif;
     font-size: 10pt;
 
+    text-transform: uppercase;
 
     background: white;
     color: black;
@@ -29,7 +34,9 @@ body {
 }
 
 
-
+/* =========================================
+   WRAPPER
+   ========================================= */
 
 .wrapper {
 
@@ -40,7 +47,9 @@ body {
 }
 
 
-
+/* =========================================
+   CONTENU PRINCIPAL
+   ========================================= */
 
 .content {
 
@@ -51,7 +60,9 @@ body {
 }
 
 
-
+/* =========================================
+   HEADER
+   ========================================= */
 
 header {
 
@@ -62,7 +73,9 @@ header {
 }
 
 
-
+/* =========================================
+   PREMIÈRE LIGNE
+   ========================================= */
 
 .top-line {
 
@@ -70,7 +83,11 @@ header {
 
     display: grid;
 
-    
+    /*
+     * La première colonne peut rétrécir.
+     * La seconde reste juste assez large
+     * pour "(Email me)".
+     */
 
     grid-template-columns: minmax(0, 1fr) max-content;
 
@@ -96,11 +113,6 @@ header {
 }
 
 
-.email-link {
-    font-style: italic;
-    white-space: nowrap;
-}
-
 .normal {
 
     text-transform: none;
@@ -115,7 +127,9 @@ header {
 }
 
 
-
+/* =========================================
+   DEUXIÈME LIGNE
+   ========================================= */
 
 .bottom-line {
 
@@ -145,7 +159,9 @@ header {
 }
 
 
-
+/* =========================================
+   LIENS
+   ========================================= */
 
 .nav-link {
 
@@ -170,7 +186,9 @@ header {
 }
 
 
-
+/* =========================================
+   CONTENU DES SECTIONS
+   ========================================= */
 
 .section-content {
 
@@ -190,7 +208,9 @@ header {
 }
 
 
-
+/* =========================================
+   PREMIER ÉLÉMENT DU CONTENU
+   ========================================= */
 
 .section-content > p:first-child {
 
@@ -199,7 +219,9 @@ header {
 }
 
 
-
+/* =========================================
+   PARAGRAPHES
+   ========================================= */
 
 p {
 
@@ -210,7 +232,9 @@ p {
 }
 
 
-
+/* =========================================
+   IMAGES
+   ========================================= */
 
 img {
 
@@ -227,7 +251,9 @@ img {
 }
 
 
-
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 768px) {
 
@@ -242,7 +268,10 @@ img {
     }
 
 
-    
+    /*
+     * Sur téléphone, on laisse la première
+     * ligne utiliser toute la largeur disponible.
+     */
 
     .top-line {
 
@@ -255,7 +284,10 @@ img {
     }
 
 
-    
+    /*
+     * Permet au nom de se raccourcir
+     * plutôt que de pousser Email hors écran.
+     */
 
     .identity {
 
