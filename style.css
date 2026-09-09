@@ -1,58 +1,100 @@
 
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    width: 100%;
-    max-width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
 
+
+
+html,
 body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    font-family: "Times New Roman", serif;
-    font-size: 10pt;
-    background: white;
-    color: black;
 }
 
+body {
+
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+
+
+    background: white;
+    color: black;
+
+}
+
+
+
+
 .wrapper {
+
     width: 100%;
     max-width: 100%;
     min-height: 100vh;
+
 }
+
+
+
 
 .content {
+
     width: 33.333333%;
+
     padding: 12px;
+
 }
+
+
+
 
 header {
+
     width: 100%;
+
     margin-bottom: 2px;
+
 }
+
+
+
 
 .top-line {
+
     width: 100%;
+
     display: grid;
+
+    
+
     grid-template-columns: minmax(0, 1fr) max-content;
+
     align-items: center;
+
     column-gap: 8px;
+
     margin-bottom: 2px;
+
 }
 
+
 .identity {
+
     min-width: 0;
+
     white-space: nowrap;
+
     overflow: hidden;
+
     text-overflow: ellipsis;
+
 }
+
 
 .email-link {
     font-style: italic;
@@ -60,97 +102,193 @@ header {
 }
 
 .normal {
+
     text-transform: none;
+
 }
+
 
 .normal-text {
+
     text-transform: none;
+
 }
+
+
+
 
 .bottom-line {
+
     width: 100%;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     min-width: 0;
+
 }
+
 
 .right-links {
+
     display: flex;
+
     align-items: center;
+
     gap: 4px;
+
     min-width: 0;
+
 }
+
+
+
 
 .nav-link {
+
     color: black;
+
     text-decoration: none;
+
 }
+
 
 .nav-link:hover {
+
     color: red;
+
 }
+
 
 .nav-link.active {
+
     color: red;
+
 }
+
+
+
 
 .section-content {
+
     display: none;
+
     width: 100%;
+
     max-width: 100%;
+
 }
+
 
 .section-content.active {
+
     display: block;
+
 }
+
+
+
 
 .section-content > p:first-child {
+
     margin-top: 0;
+
 }
+
+
+
 
 p {
+
     margin: 0;
+
     padding: 0;
+
 }
 
+
+
+
 img {
+
     width: 100%;
+
     max-width: 100%;
+
     height: auto;
+
     display: block;
+
     margin-bottom: 8px;
+
 }
+
+#portfolio-content img {
+    margin-bottom: 0;
+    border-bottom: 1pt solid black;
+}
+
+#portfolio-content img:last-child {
+    border-bottom: 0;
+}
+
+
+
 
 @media (max-width: 768px) {
 
-    html {
-        overflow-y: scroll;
+    .content {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 12px;
+
     }
 
-    .content {
-        width: 100%;
-        max-width: 100%;
-        padding: 12px;
-    }
+
+    
 
     .top-line {
+
         width: 100%;
+
         grid-template-columns: minmax(0, 1fr) max-content;
+
         column-gap: 6px;
+
     }
+
+
+    
 
     .identity {
+
         min-width: 0;
+
         overflow: hidden;
+
         text-overflow: ellipsis;
+
     }
+
 
     .bottom-line {
+
         width: 100%;
+
     }
 
+
     .right-links {
+
         white-space: nowrap;
+
     }
+
 }
+

@@ -48,12 +48,7 @@
 
                 
 
-                <a
-                    href="https://drive.proton.me/urls/XQZ3MQSXV4#fLeGRRD0rzcr"
-                    class="nav-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <a href="#" class="nav-link" data-section="portfolio">
                     Portfolio
                 </a>
 
@@ -118,16 +113,96 @@
             </p>
 
 
-           
+            <p class="normal-text">
+<br>
+
+ 
+                <a
+                    href="mailto:nathan.gatignol@protonmail.com"
+                    class="nav-link normal"
+                >
+                    email me.
+                </a>
+
+                
+
+            </p>
+
 
         </section>
 
-<section
+        <section
+            id="portfolio-content"
+            class="section-content"
+        >
+<br>
+            <img src="PORTFOLIO/2608_portfolio_out_page-0001.jpg">
+            
+            <img src="PORTFOLIO/2608_portfolio_out_page-0003.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0004.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0005.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0006.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0007.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0008.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0009.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0010.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0011.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0012.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0013.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0014.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0015.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0016.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0017.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0018.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0019.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0020.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0021.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0022.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0023.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0024.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0025.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0026.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0027.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0028.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0029.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0030.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0031.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0032.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0033.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0034.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0035.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0036.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0037.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0038.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0039.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0040.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0041.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0042.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0043.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0044.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0045.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0046.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0047.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0048.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0049.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0050.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0051.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0052.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0053.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0054.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0055.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0056.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0057.jpg">
+            <img src="PORTFOLIO/2608_portfolio_out_page-0058.jpg">
+
+        </section>
+
+        <section
             id="sightseeing-content"
             class="section-content"
         >
 
-<br>
+
             <p class="normal-text">
                 Useless and marvellous, mostly not mine.
             </p>
@@ -217,6 +292,12 @@
 <script>
 
 
+history.scrollRestoration = "manual";
+
+window.addEventListener("load", function() {
+    window.scrollTo(0, 0);
+});
+
 const links = document.querySelectorAll(
     "[data-section]"
 );
@@ -236,11 +317,10 @@ links.forEach(function(link) {
 
             event.preventDefault();
 
+            window.scrollTo(0, 0);
 
-            /*
-             * LISTENING
-             * Ouvre directement la playlist YouTube.
-             */
+
+            
 
             if (
                 this.dataset.section === "listening"
@@ -256,9 +336,7 @@ links.forEach(function(link) {
             }
 
 
-            /*
-             * Retire la sélection actuelle.
-             */
+            
 
             links.forEach(function(item) {
 
@@ -267,9 +345,7 @@ links.forEach(function(link) {
             });
 
 
-            /*
-             * Cache toutes les sections.
-             */
+            
 
             sections.forEach(function(section) {
 
@@ -278,16 +354,12 @@ links.forEach(function(link) {
             });
 
 
-            /*
-             * Active le lien cliqué.
-             */
+            
 
             this.classList.add("active");
 
 
-            /*
-             * Affiche la section correspondante.
-             */
+            
 
             document
                 .getElementById(
